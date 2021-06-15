@@ -4,7 +4,6 @@ import br.espm.invest.exchange.common.controller.ExchangeController;
 import br.espm.invest.exchange.common.datatype.Currency;
 import br.espm.invest.exchange.common.datatype.Quotation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,7 +15,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-@EnableFeignClients
 @RestController
 public class ExchangeResource implements ExchangeController {
 

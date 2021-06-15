@@ -1,6 +1,8 @@
 package br.espm.invest.exchange;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
@@ -14,5 +16,7 @@ public interface CurrencyRepository extends CrudRepository<CurrencyModel, String
     @Override
     Optional<CurrencyModel> findById(String s);
 
-    Optional<CurrencyModel> findBySymbol(String symbol);
+    // SQL customizado
+    @Query("SELECT c FROM CurrencyModel c WHERE UPPER(c.txtSymbol) = UPPER(:symbol)")
+    Optional<CurrencyModel> findBySymbol(@Param("symbol") String symbol);
 }

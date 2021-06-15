@@ -13,24 +13,27 @@ public class CurrencyModel {
 
     @Id
     @Column(name = "id_currency")
-    private String id;
+    private String idCurrency;
 
     @Column(name = "txt_name")
-    private String name;
+    private String txtName;
 
     @Column(name = "txt_symbol")
-    private String symbol;
+    private String txtSymbol;
 
     public CurrencyModel(){}
 
     public CurrencyModel(Currency currency) {
-        this.id = currency.getId();
-        this.name = currency.getName();
-        this.symbol = currency.getSymbol();
+        this.idCurrency = currency.getId();
+        this.txtName = currency.getName();
+        this.txtSymbol = currency.getSymbol();
     }
 
     public Currency to() {
-        Currency c = new Currency(id, name, symbol);
+        Currency c = new Currency();
+        c.setId(idCurrency);
+        c.setName(txtName);
+        c.setSymbol(txtSymbol);
         return c;
     }
 }

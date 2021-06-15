@@ -10,6 +10,7 @@ import java.util.Date;
 @Table(name = "quotation")
 public class QuotationModel {
 
+    @Id
     @Column(name = "id_quotation")
     private String idQuotation;
 
